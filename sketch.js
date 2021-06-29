@@ -1,5 +1,5 @@
 var boy1, boy2, boy3, boy4;
-var wall, tracker1, tracker2, tracker3, tracker4;
+var tracker1, tracker2, tracker3, tracker4;
 
 function setup() {
     createCanvas(displayWidth - 50, displayHeight - 200);
@@ -26,34 +26,12 @@ function draw() {
         boy1.velocityX = 7
     }
 
-    if (frameCount % 200 === 0) {
-        wall = createSprite(2000, 300, 20, 1000);
-    }
     if (frameCount % 15 === 0) {
         boy2.velocityX = random(3, 7);
         boy3.velocityX = random(3, 7);
         boy4.velocityX = random(3, 7);
 
     }
-
-    if (wall) {
-        if (wall.isTouching(boy2)) {
-            boy2.velocityX = 0;
-        }
-        if (wall.isTouching(boy3)) {
-            boy3.velocityX = 0;
-        }
-        if (wall.isTouching(boy4)) {
-            boy4.velocityX = 0;
-        }
-        if (wall.isTouching(boy1)) {
-            boy1.velocityX = 0;
-            boy1.velocityY = 0;
-        }
-    }
-
-
-
 
     drawSprites();
 }
